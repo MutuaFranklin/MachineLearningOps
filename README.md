@@ -24,28 +24,62 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 
 ---
 
-## Setup the Environment
 
-* Create a virtualenv with Python 3.7 and activate it. Refer to this link for help on specifying the Python version in the virtualenv. 
-```bash
-python3 -m pip install --user virtualenv
-# You should have Python 3.7 available in your host. 
-# Check the Python path using `which python3`
-# Use a command similar to this one:
-python3 -m virtualenv --python=<path-to-Python3.7> .devops
-source .devops/bin/activate
+
+### Setting up environment and Running `app.py`
+
+1. Clone the repo
 ```
-* Run `make install` to install the necessary dependencies
+ $ git clone https://github.com/MutuaFranklin/MachineLearningOps
+```
 
-### Running `app.py`
+2.Setup .devops virtualenv
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+```shell
+$ python3 -m venv .venv
+$ source ./.venv/bin/activate
+````
 
-### Kubernetes Steps
+3. Install the necessary dependencies
+```shell
+$ make setup
+$ make install
+```
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
+4. Run `appy.py`
+> Serve the application on `port 5050` instead of `port 80` by modifying port on `app.py L78`
+```shell
+$ python app.py
+```
+
+
+5. Make a predicition
+```shell
+$ ./make_prediction.sh
+```
+
+
+### Running App Docker
+* Ensure Docker Desktop is running
+   ```shell
+   $ docker version
+   ```
+
+* Run in Docker
+   ```shell
+   $ ./run_docker.sh
+   ```
+### Running App in Kubernetes
+* Ensure Kubernetes is installed
+   ```shell
+   $ kubectl version
+   ```
+
+
 * Run via kubectl
+
+   ```shell
+   $ ./run_kubernetes.sh
+   ```
+
+
