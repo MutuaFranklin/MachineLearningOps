@@ -1,4 +1,4 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/mutuaFranklin/machinelearningops/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mutuafranklin/machinelearningops/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/MutuaFranklin/MachineLearningOps/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/MutuaFranklin/MachineLearningOps/tree/main)
 
 
 ## Project Overview
