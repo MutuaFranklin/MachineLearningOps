@@ -47,7 +47,7 @@ $ make install
 ```
 
 4. Run `appy.py`
-> Serve the application on `port 5050` instead of `port 80` by modifying port on `app.py L78`
+> Serve the application
 ```shell
 $ python app.py
 ```
