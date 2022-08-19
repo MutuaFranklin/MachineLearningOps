@@ -69,6 +69,8 @@ $ ./make_prediction.sh
    ```shell
    $ ./run_docker.sh
    ```
+
+
 ### Running App in Kubernetes
 * Ensure Kubernetes is installed
    ```shell
