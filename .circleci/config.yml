@@ -1,0 +1,44 @@
+#circleci configurations
+version: 2.1
+
+commands:
+  install-hadolint:
+    description: Install Hadolint
+    steps:
+      - run:
+          name: Install Hadolint
+          command: |
+            wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.10.0/hadolint-Linux-x86_64 && \
+            chmod +x /bin/hadolint
+
+jobs:
+  build:
+    docker:
+      - image: python:3.7.3-stretch
+        user: root
+    working_directory: ~/app
+    steps:
+      - checkout
+      - install-hadolint
+      - run:
+          name: Install Dependencies
+          command: | 
+            python3 -m venv .mlops
+            source .mlops/bin/activate
+            pip install --upgrade pip
+            pip install -r requirements.txt
+      - run:
+          name: Scan MLOps Microservice
+          command: |
+            source .mlops/bin/activate
+            hadolint Dockerfile
+            pylint --disable=R,C,W1202,W1203,W1202,C0114,C0103 app.py
+      - save_cache:
+          paths:
+            - .mlops
+          key: mlops-deps
+      
+workflows:
+  devops:
+    jobs:
+      - build

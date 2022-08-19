@@ -1,4 +1,5 @@
-<include a CircleCI status badge, here>
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/mutuaFranklin/machinelearningops/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mutuafranklin/machinelearningops/tree/main)
+
 
 ## Project Overview
 
